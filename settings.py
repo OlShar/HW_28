@@ -1,0 +1,25 @@
+class Settings:
+    chrome_driver = 'C:\chromedrivers/chromedriver.exe'
+    base_url = 'https://b2c.passport.rt.ru'
+    valid_email = 'fyzz00@inbox.ru'
+    valid_password = 'Tests1234'
+    valid_email_for_reg = 'registr@inbox.ru'
+    invalid_email = 'fyzz00@gmail.com'
+    invalid_password = 'Tests5678'
+    empty_email = ''
+    empty_password = ''
+    menu_of_type_auth = ['Телефон', 'Почта', 'Логин', 'Лицевой счёт']
+    placeholder_name_of_user = ['Мобильный телефон', 'Электронная почта', 'Логин', 'Лицевой счёт']
+    f_name = 'Петя'
+    l_name = 'Иванов'
+    f_name_ = '-'
+    l_name_ = '-'
+    russian_generate_string = 'э'
+    latin_generate_string = 'jjjggwww'
+    chinese_chars = '的一是不了人我在有他这为之大来以个中上们'
+    special_chars = '|\\/!@#$%^&*()-_=+`~?"№;:[]{}'
+    numbers = 123
+    empty = ''
+    passw1 = 'Pp123456'
+    passw2 = 'Pp12345678Pp123'
+    passw3 = 'Pp12345678Pp12345978'
