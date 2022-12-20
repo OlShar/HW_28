@@ -4,7 +4,7 @@ from pages.locators import AuthLocators
 from settings import *
 
 
-# Команда для запуска тестов из этой папки:
+# Команда для запуска тестов из этого файла:
 # python -m pytest -v --driver Chrome --driver-path chromedriver.exe tests/test_registr_page.py
 
 
@@ -19,7 +19,7 @@ def test_page_left_registration(selenium):
 
 def test_elements_of_registr(selenium):
     """Блок регистрации формы «Регистрация» содержит основные элементы:
-    поля ввода: Имя, Фамилия, Регион, email, Ввод пароля, Подтверждение пароля; кнопка "Продолжить"."""
+    поля ввода: Имя, Фамилия, Регион, email, Пароль, Подтверждение пароля; кнопка "Продолжить"."""
     try:
         page_reg = RegistrPage(selenium)
         card_of_reg = [page_reg.first_name, page_reg.last_name, page_reg.address_registration,
@@ -72,7 +72,7 @@ def test_registr_by_valid_data(selenium):
 
 def test_registr_by_valid_data_(selenium):
     """Регистрация пользователя с валидными данными:
-    поля ввода "Имя" и "Фамилия" содержат знак тире (-)."""
+    в поле ввода "Имя" и "Фамилия" - знак тире (-)."""
     page_reg = RegistrPage(selenium)
     page_reg.first_name.send_keys(Settings.f_name_)
     page_reg.first_name.clear()

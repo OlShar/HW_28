@@ -4,7 +4,7 @@ from pages.locators import AuthLocators
 from settings import *
 
 
-# Команда для запуска тестов из этой папки:
+# Команда для запуска тестов из этого файла:
 # python -m pytest -v --driver Chrome --driver-path chromedriver.exe tests/test_auth_page.py
 
 
@@ -41,19 +41,19 @@ def test_menu_of_type_auth(selenium):
             assert 'Логин' in menu
             assert 'Лицевой счёт' in menu
     except AssertionError:
-        print('Ошибка в имени таба меню типа аутентификации')
+        print('Ошибка в имени таба Меню типа аутентификации')
 
 
 def test_menu_of_type_active_auth(selenium):
-    """В меню выбора типа аутентификации по умолчанию выбрана форма аутентификации по телефону"""
+    """В Меню выбора типа аутентификации по умолчанию выбрана форма аутентификации по телефону."""
     page = AuthPage(selenium)
 
     assert page.active_tub_phone.text == Settings.menu_of_type_auth[0]
 
 
 def test_placeholder_name_of_user(selenium):
-    """В форме ввода ('Номер', 'Почта', 'Логин', 'Лицевой счёт') надпись меняется в соответствии с
-    выбранным табом меню."""
+    """В форме ввода ('Номер', 'Почта', 'Логин', 'Лицевой счёт') плейсхолдер меняется в соответствии с
+    выбранным табом Меню."""
     page = AuthPage(selenium)
     page.tub_phone.click()
 
@@ -67,7 +67,7 @@ def test_placeholder_name_of_user(selenium):
 
 
 def test_forgot_password_link(selenium):
-    """Проверка перехода по ссылке "Забыл пороль"""
+    """Проверка перехода по ссылке 'Забыл пороль'."""
     page = AuthPage(selenium)
     page.driver.execute_script("arguments[0].click();", page.forgot_password_link)
 
@@ -75,7 +75,7 @@ def test_forgot_password_link(selenium):
 
 
 def test_register_link(selenium):
-    """Проверка перехода по ссылке "Зарегистрироваться"""
+    """Проверка перехода по ссылке 'Зарегистрироваться'."""
     page = AuthPage(selenium)
     page.register_link.click()
 
@@ -101,7 +101,7 @@ def test_auth_by_invalid_email(selenium, incor_email, incor_passw):
 
 
 def test_auth_by_valid_email_pass(selenium):
-    """Аутентификация пользователя с валидным email и паролем"""
+    """Аутентификация пользователя с валидным email и паролем."""
     page = AuthPage(selenium)
     page.email.send_keys(Settings.valid_email)
     page.email.clear()
